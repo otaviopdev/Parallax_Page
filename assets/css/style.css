@@ -1,0 +1,311 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;1,200;1,300;1,400&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+  background: linear-gradient(#080e47, #1b3985, #1886c2);
+}
+
+/* ------------------------------- header ------------------------------------------ */
+
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 30px 70px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10000;
+}
+
+header .logo {
+  color: #fff;
+  text-decoration: none;
+  font-size: 2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+header ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header ul li {
+  list-style: none;
+  margin-left: 30px;
+}
+
+header ul li a {
+  color: #fff;
+  text-decoration: none;
+  padding: 5px 15px;
+  border-radius: 30px;
+  font-size: 1.1rem;
+}
+
+header ul li a:hover,
+header ul li a.active {
+  background-color: #fff;
+  color: #000;
+}
+
+/* ------------------------------------------------------------------------------------ */
+
+/* ------------------------------------ section img ------------------------------------ */
+
+section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  padding: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+section::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+  background: linear-gradient(to top, #06236f, transparent);
+  z-index: 1000;
+}
+
+section img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+section img#moon {
+  mix-blend-mode: screen;
+}
+
+section img#num4 {
+  z-index: 300;
+}
+/* -------------------------------------------------------------------------------- */
+
+/* ------------------------------- text and button -------------------------------- */
+
+#text {
+  position: absolute;
+  bottom: 20%;
+  font-size: 4rem;
+  color: #fff;
+  white-space: nowrap;
+  text-shadow: 2px 2px 3px #0008;
+  /* z-index: 800; */
+}
+
+#btn {
+  position: absolute;
+  display: inline-block;
+  color: #000;
+  background: #fff;
+  text-decoration: none;
+  border-radius: 40px;
+  padding: 10px 30px;
+  z-index: 1000;
+  transform: translateY(75px);
+}
+/* ----------------------------------------------------------------------------- */
+
+/* --------------------------------- aboutMe ---------------------------------- */
+
+.container {
+  position: relative;
+  background: #06236f;
+  padding: 50px;
+}
+
+.container .info h2 {
+  color: #fff;
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.container .info p {
+  color: #fff;
+  font-size: 1rem;
+}
+
+/* ------------------------------------------------------------------------------------- */
+
+/* ----------------------------------- icons social media ----------------------------- */
+
+.icons {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background: #eee;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+  z-index: 3000;
+}
+
+.icons li {
+  list-style: none;
+}
+
+.icons li a {
+  text-decoration: none;
+  display: inline-block;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icons li a img {
+  width: 25px;
+  height: 25px;
+}
+
+.icons li a:hover {
+  transform: scale(1.2);
+}
+
+/* -------------------------------------------------------------------------------- */
+
+@media (max-width: 992px) {
+  /* ------------------------------- header -------------------------------------- */
+
+  header {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+  }
+
+  header ul {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  header ul li {
+    margin: 15px 0;
+    padding: 5px;
+  }
+
+  /* --------------------------------------------------------------------------------- */
+
+  /* --------------------------------------- section images ---------------------------------- */
+
+  section img#num1,
+  section img#num2,
+  section img#num3,
+  section img#num4 {
+    object-fit: contain;
+    object-position: center;
+  }
+
+  section img#num1 {
+    top: -100px;
+  }
+
+  section img#num3 {
+    top: -100px;
+  }
+
+  section img#num4 {
+    top: -50px;
+    left: 60px;
+  }
+
+  section img#moon {
+    position: absolute;
+    left: 150px;
+  }
+
+  /* ----------------------------- text and button ---------------------------- */
+
+  #text {
+    font-size: 3rem;
+  }
+
+  /* ------------------------------------------------------------------------------- */
+}
+
+@media screen and (min-width: 300px) and (max-width: 768px) {
+  header .logo {
+    font-size: 1.5rem;
+  }
+
+  header ul li {
+    margin: 10px 0;
+    padding: 3px;
+  }
+
+  header ul li a {
+    padding: 3px 10px;
+    font-size: 1rem;
+  }
+
+  #text {
+    font-size: 2.5rem;
+  }
+
+  #btn {
+    padding: 5px 15px;
+  }
+
+  .paragrafo4 {
+    display: none;
+  }
+
+  .container {
+    padding: 40px;
+  }
+
+  .container .info h2 {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (min-width: 300px) and (max-width: 600px) {
+  #text {
+    font-size: 1.7rem;
+  }
+
+  .paragrafo3,
+  .paragrafo4 {
+    display: none;
+  }
+
+  .container .info h2 {
+    font-size: 1.6rem;
+  }
+
+  .icons li a img {
+    width: 30px;
+    height: 30px;
+  }
+}
